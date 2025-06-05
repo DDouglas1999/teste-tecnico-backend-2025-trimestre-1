@@ -2,16 +2,13 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 
-const upload = multer(
-	{
-		storage: multer.memoryStorage(),
-		limits: {
-			fileSize: 10 * 1024 * 1024,
-			files: 1,
-		},
-	}
-	// { dest: "uploads/" }
-);
+const upload = multer({
+	storage: multer.memoryStorage(),
+	limits: {
+		fileSize: 10 * 1024 * 1024,
+		files: 1,
+	},
+});
 console.log("teste", upload.single("video"));
 
 const { getVideo, postVideo } = require("../controllers/video");
