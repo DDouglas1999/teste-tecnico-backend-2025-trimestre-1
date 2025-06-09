@@ -9,7 +9,6 @@ const upload = multer({
 		files: 1,
 	},
 });
-console.log("teste", upload.single("video"));
 
 const { getVideo, postVideo } = require("../controllers/video");
 
